@@ -1,36 +1,34 @@
-require('minitest/autorun')
-require('minitest/reporters')
+require("minitest/autorun")
+require("minitest/reporters")
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
-require_relative('../pet_shop')
+require_relative("../pet_shop")
 
 class TestPetShop < Minitest::Test
-
   def setup
-
     @customers = [
       {
         name: "Alice",
         pets: [],
-        cash: 1000
+        cash: 1000,
       },
       {
         name: "Bob",
         pets: [],
-        cash: 50
+        cash: 50,
       },
       {
         name: "Jack",
         pets: [],
-        cash: 100
-      }
+        cash: 100,
+      },
     ]
 
     @new_pet = {
       name: "Bors the Younger",
       pet_type: :cat,
       breed: "Cornish Rex",
-      price: 100
+      price: 100,
     }
 
     @pet_shop = {
@@ -39,13 +37,13 @@ class TestPetShop < Minitest::Test
           name: "Sir Percy",
           pet_type: :cat,
           breed: "British Shorthair",
-          price: 500
+          price: 500,
         },
         {
           name: "King Bagdemagus",
           pet_type: :cat,
           breed: "British Shorthair",
-          price: 500
+          price: 500,
         },
         {
           name: "Sir Lancelot",
@@ -70,13 +68,13 @@ class TestPetShop < Minitest::Test
           pet_type: :cat,
           breed: "Egyptian Mau",
           price: 1500,
-        }
+        },
       ],
       admin: {
         total_cash: 1000,
         pets_sold: 0,
       },
-      name: "Camelot of Pets"
+      name: "Camelot of Pets",
     }
   end
 
@@ -85,10 +83,10 @@ class TestPetShop < Minitest::Test
     assert_equal("Camelot of Pets", name)
   end
 
-  # def test_total_cash
-  #   sum = total_cash(@pet_shop)
-  #   assert_equal(1000, sum)
-  # end
+  def test_total_cash
+    sum = total_cash(@pet_shop)
+    assert_equal(1000, sum)
+  end
 
   # def test_add_or_remove_cash__add
   #   add_or_remove_cash(@pet_shop,10)
