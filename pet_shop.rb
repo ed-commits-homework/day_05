@@ -1,5 +1,5 @@
-def pet_shop_name(pet_shop)
-  return pet_shop[:name]
+def pet_shop_name(shop)
+  return shop[:name]
 end
 
 def total_cash(shop)
